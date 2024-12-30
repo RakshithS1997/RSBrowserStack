@@ -1,0 +1,18 @@
+package rakbs;
+
+public class translate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		        Translate translate = TranslateOptions.getDefaultInstance().getService();
+		        
+		        // Translate title to English
+		        String title = "La política es más que nunca espectáculo"; // Example title in Spanish
+		        Translation translation = translate.translate(title, Translate.TranslateOption.targetLanguage("en"));
+		        
+		        System.out.println("Translated Title: " + translation.getTranslatedText());
+		    }
+	}
+
+}
