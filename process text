@@ -1,0 +1,32 @@
+package rakbs;
+
+public class textprocess {
+
+	public static void main(String[] args) {
+		
+		string[] translatedTitles = {
+	            "The policy is more than ever a spectacle",
+	            "Political leaders must adapt",
+	            "The spectacle of politics and its impact",
+	            "Policy is a matter of great importance",
+	            "The spectacle in politics"
+	        };
+
+	        
+	        HashMap<String, Integer> wordCount = new HashMap<>();
+	        for (String title : translatedTitles) {
+	            String[] words = title.toLowerCase().split("\\W+");
+	            for (String word : words) {
+	                wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+	            }
+	        }
+
+	        // Find repeated words
+	        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+	            if (entry.getValue() > 2) {
+	                System.out.println("Repeated word: " + entry.getKey() + " - " + entry.getValue() + " times");
+	            }
+	        }
+	}
+
+}
