@@ -1,0 +1,18 @@
+public class BrowserStackTest {
+    public static void main(String[] args) throws Exception {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("browserName", "Chrome");
+        caps.setCapability("platform", "Windows 10");
+        caps.setCapability("version", "latest");
+
+        String browserStackUrl = "https://<rakshithsreeniva_tIje7s>:<fa5cZGTGirMppxPwuUB3>@browserstack.com";
+        RemoteWebDriver driver = new RemoteWebDriver(new URL(browserStackUrl), caps);
+
+        try {
+            driver.get("https://elpais.com");
+
+        } finally {
+            driver.quit();
+        }
+    }
+}
